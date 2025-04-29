@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptClue</title>
+    <link rel="stylesheet" href="styles/main.css">
+    
+</head>
+<body>
+    
+<div class="container">
+    <header>
+        <nav class="navbar">
+            <div class="bidiv">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+                    <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927z"/>
+                  </svg>
+            </div>
+
+            <div>
+                <p class="navlogo">CryptoClue</p>
+            </div>
+            <div class="misc">
+                <ul class="navbarlist">
+                        <li class="navcont"><a href="#">Home</a></li>
+                        <li class="navcont"><a href="/about">About Us</a></li>
+                        <li class="navcont"><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+    </header>
+
+<!-- INTRO ON THE SITE -->
+
+    <video autoplay loop muted plays-inline class="backgroudclip">
+        <source src="styles/CryptoBg2.mp4">
+    </video>
+ <div class="headingcenter">
+<div class="headingA">
+<h1 class="heading1">Welcome To <span>CryptoClue</span></h1>
+</div>
+</div>
+
+    <div class="intro">
+    
+    <pre class="introp">
+        Hey!!
+             Finding difficulty in choosing coins?
+        Here We Are😇
+                <span>CryptoClue</span> makes your work easy.
+                <hr>
+    We help you analyze crypto markets, providing valuable information.
+                    Also reducing the overhead of searching coins
+</pre>
+</div>
+    <br>
+
+<!-- DETAILS ON THE GLOBAL CRYPTO MARKET  -->
+
+    <div class="outerM">
+        <h2 class="heading2">Get Started</h2>
+    <div class="market">
+    <form action="/get-marketdata" method="post">
+        <input type="submit" value="EXPLORE MARKETS" name="MARKET" id="marketdata">
+    </form>
+    </div>
+
+<!-- DETAILS WILL BE PRINTED HERE -->
+
+    <div class="marketcontent">
+        <% if(locals.Marketinfo) {%> 
+                <table class="marketTable">
+                    <tr>
+                        <th>COINS COUNT</th>
+                        <th>Market CAP</th>
+                        <th>VOLUME</th>
+                        <th>MARKETCAP CHANGE</th>
+                        <th>VOLUME CHANGE</th>
+
+                    </tr>
+                    <% Marketinfo.forEach(detail => { %>
+                        <tr>
+                            <td class="marketi">
+                                <%= detail.coins_count %>
+                            </td>
+                            <td class="marketi">
+                                <%= detail.total_mcap %>
+                            </td>
+                            <td class="marketi">
+                                <%= detail.total_volume %>
+                            </td>
+                            <td class="marketi">
+                                <%= detail.mcap_change %>
+                            </td>
+                            <td class="marketi">
+                                <%= detail.volume_change %>
+                            </td>
+                        </tr>
+                        
+                   <% }) %>
+                </table>
+            </p>
+        <% } else { %>
+            <p class="marketi">Find Your Data Here :</p>
+        <% } %>
+    </div>
+</div>
+
+</div>
+
+<!-- DETAILS ON CRYPTO COINS -->
+
+<div class="outerC">
+    <h2 class="heading2">Explore Coins</h2>
+    <div class="cryptodatarange">
+        <marquee behavior="scroll" direction="left" class="mrq">* explore coins of your desired range according to their rank 🔍🔍 .</marquee>
+        <form action="/get-cryptodata" method="post" id="coinsForm">
+            
+            <label for="start">Starting Rank:</label>
+            <input type="number" placeholder="Starting Rank" name="start" id="start" class="inputs">
+
+            
+            <label for="limit">Limit:</label>
+            <input type="number" placeholder="1-100" name="limit" id="limit" class="inputs">
+       
+            <input type=submit name="submit" value="Find" id="findCoin">
+        </form>
+    </div>
+    <div class="allcoindata">
+        <% if(locals.allCoinInfo) {%>
+            <table class="allCoinTable">
+                <tr>
+                    <th>SYMBOL</th>
+                    <th>NAME</th>
+                    <th>RANK</th>
+                    <th>PRICE-USD</th>
+                    <th>MARKETCAP</th>
+                    <th>VOLUME</th>
+                    <th>% CHANGE 7D</th>
+
+                </tr>
+                <% allCoinInfo.data.forEach(detail => { %>
+                    <tr>
+                        <td class="marketi">
+                            <%= detail.symbol %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.name %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.rank %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.price_usd %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.market_cap_usd %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.volume24 %>
+                        </td>
+                        <td class="marketi">
+                            <%= detail.percent_change_7d %>
+                        </td>
+                    </tr>
+                    
+               <% }) %>
+            </table>
+        <% } else { %>
+            <p class="marketi">Find Your Coins Data Here :</p>
+        <% } %>
+    </div>
+        <br>
+    </div>
+        <!--FIND COIN BY name  -->
+
+<div class="outerN">
+    <div class="cryptodataname">
+        <h3 class="heading3">Get Coin Data by Name</h3>
+        <form action="/get-byname" method="post" id="SymbolForm">
+
+            <label for="cName"> COIN SYMBOL:</label>
+            <input type="text" placeholder="Ex: BTC-USD" name="cName" id="coinname" class="inputs">
+
+            <input type=submit name="submit" value="Find" id="findCoin">
+        </form>
+    </div>
+    <div class="singlecoin">
+        <% if(locals.singleCoinInfo) {%>
+            <table class="allCoinTable">
+                <tr>
+                    <th>SYMBOL</th>
+                    <th>PRICE-24H</th>
+                    <th>VOLUME-24H</th>
+                    <th>LAST TRADED PRICE</th>
+
+                </tr>
+                    <tr>
+                        <td class="marketi">
+                            <%= singleCoinInfo.symbol %>
+                        </td>
+                        <td class="marketi">
+                            <%= singleCoinInfo.price_24h %>
+                        </td>
+                        <td class="marketi">
+                            <%= singleCoinInfo.volume_24h %>
+                        </td>
+                        <td class="marketi">
+                            <%= singleCoinInfo.last_trade_price %>
+                        </td>
+                    </tr>
+            </table>
+
+
+        <% } else { %>
+            <p class="marketi">Find Your Coin Data Here :</p>
+        <% } %>
+    </div>
+</div>
+
+    <footer class="footerC">
+        <h4 class="heading4">copyrights &copy Purshu_01 2025</h4>
+    </footer>
+</body>
+</html>
