@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneZ</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+   
+    <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-boombox" viewBox="0 0 16 16">
+                <path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m7.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-7-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm5.5 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                <path d="M11.5 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0-1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3M5 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                <path d="M7 10.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0m-1 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0M1 3v3h14V3zm14 4H1v7h14z"/>
+              </svg>
+              <div class="siteName">
+                <p class="TuneZ">TuneZ</p>
+            </div>
+        </div>
+        </header>
+    
+
+
+    <div class="outerMusic">
+        
+         <div class="currentsong">
+            
+        <div class="music">
+            <video loop muted plays-inline id="backgroundVideo">
+                <source src="./assets/Backgroundvid.mp4" type="video/mp4">
+            </video>
+             <div class="imageplaying">
+                <img src="./assets/ANIMAL_ARJAN_VAILLY.png" alt="currentplaying" width="190px" height="250px" id="currentplaying">
+             </div>
+
+             <div class="buttons">
+                <button><img src="./assets/previous.png" alt="prev" width="30px" class="btns" id="prev"></button>
+                <button><img src="./assets/play.png" alt="PlayPause" width="30px" class="btns" id="PlayPause"></button>
+                <button><img src="./assets/next.png" width="30px" alt="next" class="btns" id="next"></button>
+             </div>
+       
+    </div>
+    </div>
+</div>
+
+<div class="outerExplore">
+        <h1 class="Explore">Explore</h1>
+        <div class="lists">
+        <div class="songs" id="ANIMAL_ARJAN_VAILLY"><img src="./assets/ANIMAL_ARJAN_VAILLY.png" alt="animal" class="songimages"  height="150px"><p class="songnames">ANIMAL ARJAN VAILLEY</p></div>
+        <div class="songs" id="Mann_Mera"><img src="./assets/Mann_Mera.png" alt="mannmera" class="songimages"  height="150px"><p class="songnames">MANN MERA</p></div>
+        <div class="songs" id="Morni"><img src="./assets/Morni.png" alt="morni" class="songimages"  height="150px"><p class="songnames">MORNI</p></div>
+        <div class="songs" id="Naach_Meri_Rani"><img src="./assets/Naach_Meri_Rani.png" alt="nachmerirani" class="songimages"  height="150px"><p class="songnames">NAACH MERI RANI</p></div>
+        <div class="songs" id="russian_bandana"><img src="./assets/russian_bandana.png" alt="russian_bandana" class="songimages"  height="150px"><p class="songnames">RUSSIAN BANDANA</p></div>
+        <div class="songs" id="Tell_Me"><img src="./assets/Tell_Me.png" alt="Tell ME" class="songimages"  height="150px"><p class="songnames">TELL ME</p></div>
+    </div>
+</div> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

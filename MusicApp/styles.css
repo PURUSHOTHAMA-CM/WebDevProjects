@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100dvh;
+    background: linear-gradient(to right, #3E3E3E, #1C1C1C);
+    
+}
+
+/* header */
+
+.logo{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin:30px 0 20px 0 ;
+}
+.TuneZ{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+     color: rgba(255, 255, 255, 0);
+    font-size: 40px;
+    font-weight: bolder;
+    /* background-repeat: no-repeat; */
+    background: linear-gradient(to bottom,white,black);
+    background-clip: text;
+}
+
+/* currents song interface */
+
+#currentplaying{
+    border-radius: 3px;
+}
+
+.outerMusic {
+   
+    display: grid;
+    place-items: center; /* center horizontally and vertically */
+    height: 50vh; /* optional: makes sure it fills screen height */
+    
+}
+
+#backgroundVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    z-index: -1; /* sends it behind everything */
+    object-fit: cover; /* makes sure it covers the screen */
+    opacity: 0.4; /* optional: controls transparency to not disturb the content */
+}
+video{
+    border-radius: 10px;
+}
+
+.music{
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.499);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.175);
+    backdrop-filter: blur(50px);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+.lists{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* border: 2px solid black; */
+    gap: 20px;
+    
+}
+
+.songs
+{
+    margin: 10px 0 0 0;
+    border: 2px solid black;
+    border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+    width: 250px
+}
+
+.songnames
+{
+text-align: center;
+background-image: linear-gradient(to right,rgba(35, 0, 237, 0.699),rgba(124, 105, 105, 0.775),rgba(71, 58, 58, 0.699));
+font-size: small;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Explore{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.601);
+
+
+}
+
+.songimages{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.outerExplore{
+    margin-top: 5rem;
+    height: 50dvh
+}
